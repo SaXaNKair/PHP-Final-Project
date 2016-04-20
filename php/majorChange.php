@@ -20,7 +20,7 @@ if($_SESSION['LOGGEDIN']){
         $change_major = mysqli_query($dbc, $query_change_major);
     }
 
-    header("Location: http://localhost/sign-up-login-form/php/StudentProfile.php");
+    header("Location: http://localhost/PHP-Final-Project/php/StudentProfile.php");
 }
 
 ?>

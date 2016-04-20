@@ -14,7 +14,7 @@ if($_SESSION['LOGGEDIN']){
     $query_delete_course = "DELETE FROM `College`.`student-course` WHERE 
                       `student-course`.`student_id` = ".$_SESSION['STUD_ID']." AND `student-course`.`course_id` = ".$_GET['id'];
     $delete_course = mysqli_query($dbc, $query_delete_course);
-    header("Location: http://localhost/sign-up-login-form/php/StudentProfile.php");
+    header("Location: http://localhost/PHP-Final-Project/php/StudentProfile.php");
 }
 
 

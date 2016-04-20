@@ -9,5 +9,5 @@
 session_start();
 unset($_SESSION["LOGGEDIN"]);
 unset($_SESSION["STUD_ID"]);
-header("Location: http://localhost/sign-up-login-form/index.html");
+header("Location: http://localhost/PHP-Final-Project/index.html");
 ?>

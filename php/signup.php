@@ -10,6 +10,7 @@ if($_POST['f_name'] && $_POST['l_name'] && $_POST['email'] && $_POST['password']
 
     //establishing the connection to MySQL database
     require_once('../mysql-connect.php');
+    require_once ('Student.php');
 
     //SQL query to select all the students (potential sequrity issue)
     $query = "SELECT email FROM College.Student";
@@ -31,11 +32,16 @@ if($_POST['f_name'] && $_POST['l_name'] && $_POST['email'] && $_POST['password']
         VALUES (NULL ,  '".$_POST['f_name']."',  '".$_POST['l_name']."',  '".$_POST['email']."',  '".$_POST['password']."')";
 
         mysqli_query($dbc, $query_insert);
-
-        echo "You have created a new student account. Please <a href='../index.html'>Log In</a> now.";
+        session_start();
+        $student = Student::initStudent($dbc, $_POST['email'], $_POST['password']);
+        $_SESSION['LOGGEDIN'] = true;
+        $_SESSION['STUD_ID'] = $student->getId();
+        header("Location: http://localhost/PHP-Final-Project/php/StudentProfile.php");
+    }else{
+        echo "This email is already taken. <a href='../index.html'>Try again...</a>";
     }
 }else{
-    echo "You must fill out every field of the form. <a href='../index.html'>Back...</a> now.";
+    echo "You must fill out every field of the form. <a href='../index.html'>Back...</a>";
 }
 
 
