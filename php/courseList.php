@@ -7,9 +7,9 @@
  */
 session_start();
 require_once('../mysql-connect.php');
-require_once ('Student.php');
-require_once ('Course.php');
-require_once ('Major.php')
+require_once('Classes/Student.php');
+require_once('Classes/Course.php');
+require_once('Classes/Major.php')
 ?>
 <!DOCTYPE html>
 <html >
@@ -43,7 +43,7 @@ require_once ('Major.php')
             if(!in_array($course->getId(), $takenCourses) && in_array($course->getId(), $reqClasses)){
                 echo "<tr>";
                 echo "<td>".$course->getName()."</td><td>".$course->getDescription()."</td><td>".$course->getTime().
-                    "</td><td>".$course->getUnits()."</td><td><a href='addingClass.php?id=".$course->getId()."' >ADD</a></td>";
+                    "</td><td>".$course->getUnits()."</td><td><a href='Actions/addingClass.php?id=".$course->getId()."' >ADD</a></td>";
                 echo "</tr>";
             }
         }
@@ -62,16 +62,14 @@ require_once ('Major.php')
             if(!in_array($course->getId(), $takenCourses) && !in_array($course->getId(), $reqClasses)){
                 echo "<tr>";
                 echo "<td>".$course->getName()."</td><td>".$course->getDescription()."</td><td>".$course->getTime().
-                    "</td><td>".$course->getUnits()."</td><td><a href='addingClass.php?id=".$course->getId()."' >ADD</a></td>";
+                    "</td><td>".$course->getUnits()."</td><td><a href='Actions/addingClass.php?id=".$course->getId()."' >ADD</a></td>";
                 echo "</tr>";
             }
         }
 
         echo "</table>";
         echo "</div>";
-
-
-
+        
         echo "<form action='StudentProfile.php' method='post'>";
         echo "<input type='submit' value='Cancel'>";
         echo "</form>";

@@ -6,9 +6,9 @@
  * Time: 11:14 PM
  */
 session_start();
-require_once('../mysql-connect.php');
-require_once ('Student.php');
-require_once ('Course.php');
+require_once('../../mysql-connect.php');
+require_once('../Classes/Student.php');
+require_once('../Classes/Course.php');
 
 if($_SESSION['LOGGEDIN']){
     $query_delete_course = "DELETE FROM `College`.`student-course` WHERE 

@@ -7,9 +7,9 @@
  */
 
 require_once('../mysql-connect.php');
-require_once ('Student.php');
-require_once ('Course.php');
-require_once ('Major.php');
+require_once('Classes/Student.php');
+require_once('Classes/Course.php');
+require_once('Classes/Major.php');
 session_start();
 ?>
     <!DOCTYPE html>
@@ -24,7 +24,7 @@ session_start();
     </head>
 
     <body>
-    <a href="logout.php" id="logout">LOG OUT</a><br>
+    <a href="Actions/logout.php" id="logout">LOG OUT</a><br>
 <?php
     //Initiation of the student object when first logged in
     $student = Student::initStudent($dbc, $_POST['email'], $_POST['password']);
@@ -68,7 +68,7 @@ session_start();
             foreach ($currentCourses as $course) {
                 echo "<tr>";
                 echo "<td>" . $course->getName() . "</td>" . "<td>" . $course->getDescription() . "</td>" . "<td>" . $course->getTime() . "</td>" .
-                    "</td>" . "<td>" . $course->getUnits() . "</td><td><a href='deletingCourse.php?id=" . $course->getId() . "' >DROP</a></td>";
+                    "</td>" . "<td>" . $course->getUnits() . "</td><td><a href='Actions/deletingCourse.php?id=" . $course->getId() . "' >DROP</a></td>";
                 echo "</tr>";
             }
 

@@ -6,7 +6,7 @@
  * Time: 10:43 PM
  */
 session_start();
-require_once('../mysql-connect.php');
+require_once('../../mysql-connect.php');
 
 if($_SESSION['LOGGEDIN']){
     $query_add_course = "INSERT INTO `College`.`student-course` (`student_id`, `course_id`, `semester`, `grade`) 

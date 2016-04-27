@@ -6,7 +6,7 @@
  * Date: 4/11/16
  * Time: 6:24 PM
  */
-require ("Course.php");
+require("Course.php");
 
 class Student
 {

@@ -10,7 +10,7 @@ if($_POST['f_name'] && $_POST['l_name'] && $_POST['email'] && $_POST['password']
 
     //establishing the connection to MySQL database
     require_once('../mysql-connect.php');
-    require_once ('Student.php');
+    require_once('Classes/Student.php');
 
     //SQL query to select all the students (potential sequrity issue)
     $query = "SELECT email FROM College.Student";

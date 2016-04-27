@@ -7,7 +7,7 @@
  */
 session_start();
 require_once('../mysql-connect.php');
-require_once ('Major.php')
+require_once('Classes/Major.php')
 ?>
 <!DOCTYPE html>
 <html >
@@ -30,7 +30,7 @@ if($_SESSION['LOGGEDIN']){
 
     if($majors) {
         foreach ($majors as $major) {
-            echo "<form action='majorChange.php' method='post'>";
+            echo "<form action='Actions/majorChange.php' method='post'>";
             echo "<input name='major_id' value='" . $major->getMajorId() . "' hidden>";
             echo "<input type='submit' value='" . $major->getName() . "'>";
             echo "</form>";
