@@ -6,7 +6,7 @@
  * Time: 1:57 PM
  */
 session_start();
-require_once('../mysql-connect.php');
+require_once('../../mysql-connect.php');
 
 if($_SESSION['LOGGEDIN']){
     $query_check = "SELECT * FROM `College`.`student-major` WHERE `student-major`.`student_id` =".$_SESSION['STUD_ID'];
